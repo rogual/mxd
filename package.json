@@ -1,0 +1,17 @@
+{
+  "name": "mxd",
+  "version": "0.0.1",
+  "description": "Maths in arbitrary dimensions",
+  "main": "MXD.js",
+  "scripts": {
+    "test": "mocha --ui tdd"
+  },
+  "author": "Robin Allen",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  }
+}
