@@ -26,6 +26,7 @@ Vectors:
         V.ceil(v)
         V.dot(a, b)
         V.invert(v)
+        V.rotate(radians)
 
     Part-wise arithmetic (v, v) -> v:
         V.add(a, b)
