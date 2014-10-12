@@ -61,6 +61,16 @@ Object.defineProperties(Rect.prototype, {
         this.bottomRight
       ];
     }
+  },
+  norm: {
+    get: function() {
+      return Rect.fromSides(
+        Math.min(this.left, this.right),
+        Math.min(this.top, this.bottom),
+        Math.max(this.left, this.right),
+        Math.max(this.top, this.bottom)
+      );
+    }
   }
 });
 
