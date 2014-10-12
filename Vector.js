@@ -40,8 +40,8 @@ def('withMag', function(a, mag) { return Vector.scale(Vector.norm(a), mag); });
 def('scale', function(v, f) { return v.map(function(x) { return x * f; }); });
 def('rscale', function(f, v) { return Vector.scale(v, f); });
 
-def('scaleInverse', function(v, f) { return Vector.scale(v, 1/f); });
-def('rscaleInverse', function(v, f) { return v.map(function(x) { return f / x; }); });
+def('scaleInverse', function(v, f) { return v.map(function(x) { return f / x; }); });
+def('rscaleInverse', function(f, v) { return Vector.scaleInverse(v, f); });
 
 def('floor', function(v) { return v.map(Math.floor); });
 def('ceil', function(v) { return v.map(Math.ceil); });
