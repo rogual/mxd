@@ -80,3 +80,12 @@ def('perpendicular', function(a) {
 def('invert', function(v) {
   return v.map(function(x) { return -x; });
 });
+
+def('rotate', function(v, a) {
+  var s = Math.sin(a);
+  var c = Math.cos(a);
+  return [
+    v[0] * c - v[1] * s,
+    v[0] * s + v[1] * c
+  ];
+});
