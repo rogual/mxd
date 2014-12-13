@@ -4,6 +4,10 @@ var Util = require('./Util');
 
 var Vector = module.exports = {};
 
+Vector.sum = function(xs) {
+  return _.reduce(xs, Vector.add, [0, 0]);
+};
+
 function def(name, fn) {
   Vector[name] = fn;
 }
