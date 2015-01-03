@@ -40,5 +40,31 @@ suite('Vector', function() {
     assert(_.isEqual(r, [[1, 1], [1, 2], [2, 1], [2, 2]]));
   });
 
+  test('angle', function() {
+    [[1, 0], [2, 0], [1, 1], [0, -1], [-1, -1], [100, 67]].forEach(function(v) {
+      assertVectorsAlmostEqual(V.norm(v), V.fromAngle(V.angle(v)));
+    });
+
+    assertAlmostEqual(V.angle([1, 0]), 0);
+    assertAlmostEqual(V.angle([0, 1]), Math.PI / 2);
+    assertAlmostEqual(V.angle([-1, 0]), Math.PI);
+    assertAlmostEqual(V.angle([0, -1]), -Math.PI / 2);
+
+    assertVectorsAlmostEqual(V.fromAngle(0), [1, 0]);
+    assertVectorsAlmostEqual(V.fromAngle(Math.PI / 2), [0, 1]);
+    assertVectorsAlmostEqual(V.fromAngle(Math.PI), [-1, 0]);
+    assertVectorsAlmostEqual(V.fromAngle(-Math.PI / 2), [0, -1]);
+  });
+
 });
 
+var epsilon = 10e-10;
+
+function assertAlmostEqual(x, y) {
+  assert(Math.abs(x - y) < epsilon);
+}
+
+function assertVectorsAlmostEqual(x, y) {
+  assertAlmostEqual(x[0], y[0]);
+  assertAlmostEqual(x[1], y[1]);
+}

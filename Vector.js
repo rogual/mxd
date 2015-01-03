@@ -93,3 +93,11 @@ def('rotate', function(v, a) {
     v[0] * s + v[1] * c
   ];
 });
+
+def('angle', function(v) {
+  return Math.atan2(v[1], v[0]);
+});
+
+Vector.fromAngle = function(a) {
+  return [Math.cos(a), Math.sin(a)];
+};
