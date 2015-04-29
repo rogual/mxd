@@ -56,6 +56,10 @@ suite('Vector', function() {
     assertVectorsAlmostEqual(V.fromAngle(-Math.PI / 2), [0, -1]);
   });
 
+  test('mul', function() {
+    assert.deepEqual(V.mul([1, 2], [3, 4]), [3, 8]);
+  });
+
 });
 
 var epsilon = 10e-10;

@@ -52,7 +52,7 @@ def('ceil', function(v) { return v.map(Math.ceil); });
 
 function partwise(op) {
   return function(a, b) {
-    return _.zip([a, b]).map(function(x) { return op(x[0], x[1]); });
+    return _.zip(a, b).map(function(x) { return op(x[0], x[1]); });
   };
 }
 
